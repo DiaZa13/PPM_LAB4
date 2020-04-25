@@ -1,0 +1,2 @@
+rootProject.name='PPM_LAB4'
+include ':app'
