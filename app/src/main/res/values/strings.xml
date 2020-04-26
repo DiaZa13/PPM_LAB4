@@ -3,4 +3,5 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="About">Soy una aplicación especializada en la administración del registro de invitados para cualquier tipo de evento</string>
 </resources>
