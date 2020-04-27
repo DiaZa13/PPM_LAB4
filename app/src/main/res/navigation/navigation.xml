@@ -20,7 +20,8 @@
         tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/action_registerFragment_to_resultsFragment"
-            app:destination="@id/resultsFragment" />
+            app:destination="@id/resultsFragment"
+            app:popUpTo="@id/startFragment2" />
     </fragment>
     <fragment
         android:id="@+id/resultsFragment"
@@ -29,10 +30,8 @@
         tools:layout="@layout/fragment_results">
         <action
             android:id="@+id/action_resultsFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/action_resultsFragment_to_startFragment23"
-            app:popUpTo="@id/startFragment2" />
+            app:destination="@id/registerFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
