@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
@@ -38,6 +39,7 @@ class registerFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_register, container, false)
 
+        (activity as AppCompatActivity).supportActionBar?.title = "Registrando (" + guestIndex + "/8) "
         binding.guest = guest
         setHasOptionsMenu(true)
         return binding.root
@@ -56,6 +58,7 @@ class registerFragment : Fragment() {
             guest = Guest(guestIndex, registered = "Sí")
             binding.guest = guest
             mensaje +=  " " + guest.name + ":" + guest.registered + ", "
+            (activity as AppCompatActivity).supportActionBar?.title = "Registrando (" + guestIndex + "/8) "
             if(guestIndex == 9){
                 var bundle = bundleOf("Message" to mensaje, "Counter" to cont)
                 //bundle = bundleOf("Counter" to cont)
@@ -69,6 +72,7 @@ class registerFragment : Fragment() {
             guest = Guest(guestIndex, registered = "No")
             binding.guest = guest
             mensaje +=  " " + guest.name + ":" + guest.registered + ", "
+            (activity as AppCompatActivity).supportActionBar?.title = "Registrando (" + guestIndex + "/8) "
             if(guestIndex == 9){
                 var bundle = bundleOf("Message" to mensaje, "Counter" to cont)
                 //bundle = bundleOf("Counter" to cont)
