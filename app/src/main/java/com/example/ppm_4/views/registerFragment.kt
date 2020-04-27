@@ -57,8 +57,8 @@ class registerFragment : Fragment() {
             binding.guest = guest
             mensaje +=  " " + guest.name + ":" + guest.registered + ", "
             if(guestIndex == 9){
-                var bundle = bundleOf("Message" to mensaje)
-                bundle = bundleOf("Counter" to cont)
+                var bundle = bundleOf("Message" to mensaje, "Counter" to cont)
+                //bundle = bundleOf("Counter" to cont)
                 view?.findNavController()?.navigate(R.id.action_registerFragment_to_resultsFragment, bundle)
             }
             true
@@ -70,8 +70,8 @@ class registerFragment : Fragment() {
             binding.guest = guest
             mensaje +=  " " + guest.name + ":" + guest.registered + ", "
             if(guestIndex == 9){
-                var bundle = bundleOf("Message" to mensaje)
-                bundle = bundleOf("Counter" to cont)
+                var bundle = bundleOf("Message" to mensaje, "Counter" to cont)
+                //bundle = bundleOf("Counter" to cont)
                 view?.findNavController()?.navigate(R.id.action_registerFragment_to_resultsFragment, bundle)
             }
             true

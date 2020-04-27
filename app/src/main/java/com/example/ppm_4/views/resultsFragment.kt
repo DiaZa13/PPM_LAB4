@@ -2,13 +2,13 @@ package com.example.ppm_4.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 
 import com.example.ppm_4.R
 import com.example.ppm_4.databinding.FragmentResultsBinding
@@ -20,7 +20,7 @@ import com.example.ppm_4.models.Guest
  */
 class resultsFragment : Fragment() {
 
-
+    var mensaje:String? = " "
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,7 +33,7 @@ class resultsFragment : Fragment() {
 
         }
 
-        var mensaje = arguments?.getString("Message")
+        mensaje = arguments?.getString("Message")
         var contador = arguments?.getInt("Counter")
         binding.txtTRegistrados.text = "Registrados: " + contador.toString()
 
@@ -41,7 +41,27 @@ class resultsFragment : Fragment() {
             Toast.makeText(activity, mensaje, Toast.LENGTH_SHORT).show()
         }
 
+        setHasOptionsMenu(true)
         return binding.root
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.share_menu, menu)
+    }
+
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            super.onOptionsItemSelected(item)
+
+            if(item.itemId == R.id.share){
+                val intent = Intent()
+                intent.action=Intent.ACTION_SEND
+                intent.putExtra(Intent.EXTRA_TEXT, mensaje)
+                intent.type="text/plain"
+                startActivity(Intent.createChooser(intent, "Share to:"))
+            }
+            return NavigationUI.onNavDestinationSelected(item, view!!.findNavController())
+        }
+
 }
+
