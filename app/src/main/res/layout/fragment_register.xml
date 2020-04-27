@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".views.registerFragment">
 
+    <data>
+        <variable
+            name="guest"
+            type="com.example.ppm_4.models.Guest" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
@@ -20,7 +25,7 @@
             android:fontFamily="@font/jockey_one"
             android:foregroundGravity="center"
             android:gravity="center_horizontal|center_vertical"
-            android:text="TextView"
+            android:text="@{guest.email}"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +44,8 @@
             android:fontFamily="@font/jockey_one"
             android:foregroundGravity="center"
             android:gravity="center_horizontal|center_vertical"
-            android:text="TextView"
+            android:inputType="number"
+            android:text="@{guest.phone}"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/txtEmail"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,15 +55,15 @@
         <TextView
             android:id="@+id/txtName"
             android:layout_width="240dp"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
             android:layout_marginStart="28dp"
             android:layout_marginLeft="28dp"
             android:layout_marginBottom="28dp"
             android:fontFamily="@font/jockey_one"
             android:foregroundGravity="center"
             android:gravity="center_horizontal|center_vertical"
-            android:text="TextView"
-            android:textSize="24sp"
+            android:text="@{guest.name}"
+            android:textSize="22sp"
             app:layout_constraintBottom_toTopOf="@+id/txtPhone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -111,5 +117,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.814" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

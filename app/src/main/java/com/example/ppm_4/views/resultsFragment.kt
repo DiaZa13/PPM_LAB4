@@ -23,7 +23,7 @@ class resultsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding: FragmentResultsBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_start, container, false)
+            inflater, R.layout.fragment_results, container, false)
         binding.btnReload.setOnClickListener{
             view?.findNavController()?.navigate(R.id.action_resultsFragment_to_registerFragment)
         }
