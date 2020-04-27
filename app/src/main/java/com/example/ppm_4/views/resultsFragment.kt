@@ -20,7 +20,7 @@ import com.example.ppm_4.models.Guest
  */
 class resultsFragment : Fragment() {
 
-    
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,7 +33,9 @@ class resultsFragment : Fragment() {
 
         }
 
-        var mensaje = arguments?.getString("amount")
+        var mensaje = arguments?.getString("Message")
+        var contador = arguments?.getInt("Counter")
+        binding.txtTRegistrados.text = "Registrados: " + contador.toString()
 
         binding.btnGuests.setOnClickListener{
             Toast.makeText(activity, mensaje, Toast.LENGTH_SHORT).show()
