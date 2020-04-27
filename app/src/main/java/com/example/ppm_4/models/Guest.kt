@@ -1,6 +1,6 @@
 package com.example.ppm_4.models
 
-data class Guest(var index: Int, var name:String = "", var phone:String = "1234-5678", var email:String = "", var registered:Boolean = false){
+data class Guest(var index: Int, var name:String = "", var phone:String = "1234-5678", var email:String = "", var registered:String = " "){
     init {
         name = when(index){
             1 -> "María Mireya Manríquez Acevedo"
@@ -29,10 +29,6 @@ data class Guest(var index: Int, var name:String = "", var phone:String = "1234-
             6 -> "victoradolfo@gmail.com"
             7 -> "concepcionanzures@gmail.com"
             else -> "oscarmen17@hotmail.com"}
-
-
-
-
 
     }
 }
